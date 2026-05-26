@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface FlooringMasteryDao {
 
+    //Order
     List<Order> getOrderByDate(LocalDate date);
     Order addOrder(LocalDate date, Order order);
     Order editOrder(LocalDate date, Order order);
