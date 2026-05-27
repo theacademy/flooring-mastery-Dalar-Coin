@@ -41,13 +41,13 @@ public class FlooringMasteryView {
         return LocalDate.parse(dateString, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
     }
 
-    private FlooringMasteryDao dao = new FlooringMasteryDaoFileImpl();
 
-    public void displayCreateStudentBanner() {
-        io.print("=== Create Student ===");
+
+    public void displayCreateOrderBanner() {
+        io.print("=== Create Order ===");
     }
 
     public void displayCreateSuccessBanner() {
-        io.readString("Student successfully created.  Please hit enter to continue");
+        io.readString("Order successfully created.  Please hit enter to continue");
     }
 }

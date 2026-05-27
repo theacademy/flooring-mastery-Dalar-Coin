@@ -1,6 +1,9 @@
 package flooringmastery.controller;
 
 
+import flooringmastery.dao.FlooringMasteryDao;
+import flooringmastery.dao.FlooringMasteryDaoFileImpl;
+import flooringmastery.model.Order;
 import flooringmastery.view.FlooringMasteryView;
 import flooringmastery.view.UserIO;
 import flooringmastery.view.UserIOConsoleImpl;
@@ -8,6 +11,7 @@ import flooringmastery.view.UserIOConsoleImpl;
 public class FlooringMasteryController {
 
     private FlooringMasteryView view = new FlooringMasteryView();
+    private FlooringMasteryDao dao = new FlooringMasteryDaoFileImpl();
     private UserIO io = new UserIOConsoleImpl();
 
     public void run() {
@@ -22,7 +26,7 @@ public class FlooringMasteryController {
                     io.print("DISPLAY ORDERS");
                     break;
                 case 2:
-                    io.print("ADD AN ORDER");
+                    createOrder();
                     break;
                 case 3:
                     io.print("EDIT AN ORDER");
@@ -46,5 +50,12 @@ public class FlooringMasteryController {
 
     private int getMenuSelection() {
         return view.printMenuAndGetSelection();
+    }
+
+    private void createOrder() {
+        view.displayCreateOrderBanner();
+        Order newOrder = view.getNewOrderInfo();
+        dao.addOrder(newOrder.getOrderDate(), newOrder);
+        view.displayCreateSuccessBanner();
     }
 }
