@@ -1,4 +1,4 @@
-package FlooringMastery.service;
+package flooringmastery.service;
 
 public class ClassRosterDuplicateIdException extends Exception {
 

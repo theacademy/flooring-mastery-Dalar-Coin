@@ -1,11 +1,11 @@
-package FlooringMastery.controller;
+package flooringmastery.controller;
 
-import FlooringMastery.dao.ClassRosterPersistenceException;
-import FlooringMastery.dto.Student;
-import FlooringMastery.service.ClassRosterDataValidationException;
-import FlooringMastery.service.ClassRosterDuplicateIdException;
-import FlooringMastery.service.ClassRosterServiceLayer;
-import FlooringMastery.ui.ClassRosterView;
+import flooringmastery.dao.ClassRosterPersistenceException;
+import flooringmastery.dto.Student;
+import flooringmastery.service.ClassRosterDataValidationException;
+import flooringmastery.service.ClassRosterDuplicateIdException;
+import flooringmastery.service.ClassRosterServiceLayer;
+import flooringmastery.ui.ClassRosterView;
 
 import java.util.List;
 

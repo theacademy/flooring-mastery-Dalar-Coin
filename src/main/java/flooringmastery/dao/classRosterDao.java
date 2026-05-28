@@ -1,6 +1,6 @@
-package FlooringMastery.dao;
+package flooringmastery.dao;
 
-import FlooringMastery.dto.Student;
+import flooringmastery.dto.Student;
 
 import java.util.List;
 

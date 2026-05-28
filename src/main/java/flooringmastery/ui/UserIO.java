@@ -1,4 +1,4 @@
-package FlooringMastery.ui;
+package flooringmastery.ui;
 
 public interface UserIO {
 

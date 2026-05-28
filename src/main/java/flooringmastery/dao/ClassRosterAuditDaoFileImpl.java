@@ -1,4 +1,4 @@
-package FlooringMastery.dao;
+package flooringmastery.dao;
 
 import java.io.FileWriter;
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package FlooringMastery.service;
+package flooringmastery.service;
 
 
-import FlooringMastery.dao.ClassRosterAuditDao;
-import FlooringMastery.dao.ClassRosterPersistenceException;
-import FlooringMastery.dao.classRosterDao;
-import FlooringMastery.dto.Student;
+import flooringmastery.dao.ClassRosterAuditDao;
+import flooringmastery.dao.ClassRosterPersistenceException;
+import flooringmastery.dao.classRosterDao;
+import flooringmastery.dto.Student;
 
 import java.util.List;
 

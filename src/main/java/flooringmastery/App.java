@@ -1,15 +1,6 @@
-package FlooringMastery;
+package flooringmastery;
 
-import FlooringMastery.controller.ClassRosterController;
-import FlooringMastery.dao.ClassRosterAuditDao;
-import FlooringMastery.dao.ClassRosterAuditDaoFileImpl;
-import FlooringMastery.dao.ClassRosterDaoFileImpl;
-import FlooringMastery.dao.classRosterDao;
-import FlooringMastery.service.ClassRosterServiceLayer;
-import FlooringMastery.service.ClassRosterServiceLayerImpl;
-import FlooringMastery.ui.ClassRosterView;
-import FlooringMastery.ui.UserIO;
-import FlooringMastery.ui.UserIOConsoleImpl;
+import flooringmastery.controller.ClassRosterController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

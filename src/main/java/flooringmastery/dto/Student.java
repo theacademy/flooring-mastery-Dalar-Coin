@@ -1,4 +1,4 @@
-package FlooringMastery.dto;
+package flooringmastery.dto;
 
 import java.util.Objects;
 

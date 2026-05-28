@@ -1,6 +1,6 @@
-package FlooringMastery.ui;
+package flooringmastery.ui;
 
-import FlooringMastery.dto.Student;
+import flooringmastery.dto.Student;
 
 import java.util.List;
 

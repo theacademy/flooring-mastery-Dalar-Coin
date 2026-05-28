@@ -1,4 +1,4 @@
-package FlooringMastery.dao;
+package flooringmastery.dao;
 
 public class ClassRosterPersistenceException extends Exception{
 
