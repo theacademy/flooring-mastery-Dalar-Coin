@@ -1,6 +1,6 @@
-package com.sg.classroster.ui;
+package FlooringMastery.ui;
 
-import com.sg.classroster.dto.Student;
+import FlooringMastery.dto.Student;
 
 import java.util.List;
 

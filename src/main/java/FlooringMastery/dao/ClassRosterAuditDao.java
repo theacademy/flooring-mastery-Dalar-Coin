@@ -1,4 +1,4 @@
-package com.sg.classroster.dao;
+package FlooringMastery.dao;
 
 public interface ClassRosterAuditDao {
 

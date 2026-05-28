@@ -1,4 +1,4 @@
-package com.sg.classroster.ui;
+package FlooringMastery.ui;
 
 import java.util.Scanner;
 

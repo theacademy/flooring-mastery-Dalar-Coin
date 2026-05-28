@@ -1,7 +1,7 @@
-package com.sg.classroster.service;
+package FlooringMastery.service;
 
-import com.sg.classroster.dao.ClassRosterPersistenceException;
-import com.sg.classroster.dto.Student;
+import FlooringMastery.dao.ClassRosterPersistenceException;
+import FlooringMastery.dto.Student;
 
 import java.util.List;
 

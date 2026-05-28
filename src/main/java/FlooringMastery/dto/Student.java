@@ -1,4 +1,4 @@
-package com.sg.classroster.dto;
+package FlooringMastery.dto;
 
 import java.util.Objects;
 

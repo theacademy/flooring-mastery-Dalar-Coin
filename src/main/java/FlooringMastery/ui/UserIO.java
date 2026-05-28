@@ -1,4 +1,4 @@
-package com.sg.classroster.ui;
+package FlooringMastery.ui;
 
 public interface UserIO {
 

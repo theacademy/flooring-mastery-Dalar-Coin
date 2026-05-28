@@ -1,4 +1,4 @@
-package com.sg.classroster.service;
+package FlooringMastery.service;
 
 public class ClassRosterDataValidationException extends Exception {
 
