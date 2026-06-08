@@ -135,7 +135,7 @@ public class FlooringMasteryServiceLayerImpl implements FlooringMasteryServiceLa
         // Spec: letters, numbers, periods, and commas allowed ("Acme, Inc." is valid).
         if (!customerName.matches("[A-Za-z0-9., ]*") || customerName.trim().isEmpty()) {
             throw new FlooringMasteryDataValidationException(
-                    "Customer name may only contain letters, numbers, periods, commas, and spaces.");
+                    "Customer name must only be made up of letters, numbers, periods, commas, and spaces.");
         }
     }
 

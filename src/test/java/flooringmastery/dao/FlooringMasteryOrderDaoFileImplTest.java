@@ -25,8 +25,8 @@ class FlooringMasteryOrderDaoFileImplTest {
         if (folder.exists()) {
             File[] files = folder.listFiles();
             if (files != null) {
-                for (File f : files) {
-                    f.delete();
+                for (File file : files) {
+                    file.delete();
                 }
             }
         } else {
@@ -109,8 +109,8 @@ class FlooringMasteryOrderDaoFileImplTest {
         if (folder.exists()) {
             File[] files = folder.listFiles();
             if (files != null) {
-                for (File f : files) {
-                    f.delete();
+                for (File file : files) {
+                    file.delete();
                 }
             }
             folder.delete();

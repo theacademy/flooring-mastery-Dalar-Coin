@@ -96,12 +96,10 @@ public class FlooringMasteryView {
                 io.print("Order number: " + order.getOrderNumber());
                 io.print("Customer name: " + order.getCustomerName());
                 io.print("State: " + order.getState() + "  Tax Rate: " + order.getTaxRate());
-                io.print("Product type: " + order.getProductType()
-                        + "  cost/sqft: " + order.getCostPerSquareFoot()
-                        + "  labor/sqft: " + order.getLaborCostPerSquareFoot());
+                io.print("Product type: " + order.getProductType() + "  cost/sqft: "
+                        + order.getCostPerSquareFoot() + "  labor/sqft: " + order.getLaborCostPerSquareFoot());
                 io.print("Area: " + order.getArea());
-                io.print("Material: " + order.getMaterialCost()
-                        + "  Labor: " + order.getLaborCost()
+                io.print("Material: " + order.getMaterialCost() + "  Labor: " + order.getLaborCost()
                         + "  Tax: " + order.getTax());
                 io.print("Total: " + order.getTotal());
             }
