@@ -10,7 +10,7 @@ import java.util.*;
 
 public class FlooringMasteryOrderDaoFileImpl implements FlooringMasteryOrderDao {
 
-    public final String ORDERS_FOLDER;
+    public String ORDERS_FOLDER;
     public static final String DELIMITER = ",";
     private final DateTimeFormatter FILE_DATE =
             DateTimeFormatter.ofPattern("MMddyyyy");
@@ -18,7 +18,7 @@ public class FlooringMasteryOrderDaoFileImpl implements FlooringMasteryOrderDao 
     private Map<LocalDate, Map<Integer, Order>> orders = new HashMap<>();
 
     public FlooringMasteryOrderDaoFileImpl() {
-        ORDERS_FOLDER = "src/main/java/flooringmastery/Orders/";
+        ORDERS_FOLDER = "SampleFileData/Orders/";
     }
 
     public FlooringMasteryOrderDaoFileImpl(String ordersFolder) {
@@ -106,7 +106,7 @@ public class FlooringMasteryOrderDaoFileImpl implements FlooringMasteryOrderDao 
             throws FlooringMasteryPersistenceException {
         loadAllOrders();
 
-        String backupFolder = "Backup/";
+        String backupFolder = "SampleFileData/Backup/";
         File folder = new File(backupFolder);
         if (!folder.exists()) {
             folder.mkdirs();

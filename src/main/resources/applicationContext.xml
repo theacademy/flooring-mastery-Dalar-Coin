@@ -23,7 +23,7 @@
     </bean>
 
     <bean id="orderDao" class="flooringmastery.dao.FlooringMasteryOrderDaoFileImpl">
-        <constructor-arg value="Orders/"/>
+        <constructor-arg value="SampleFileData/Orders/"/>
     </bean>
     <bean id="taxesDao" class="flooringmastery.dao.FlooringMasteryTaxesDaoFileImpl"/>
     <bean id="productDao" class="flooringmastery.dao.FlooringMasteryProductDaoFileImpl"/>

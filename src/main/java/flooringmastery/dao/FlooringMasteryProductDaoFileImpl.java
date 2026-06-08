@@ -10,7 +10,7 @@ import java.util.*;
 
 public class FlooringMasteryProductDaoFileImpl implements FlooringMasteryProductDao {
 
-    public static final String PRODUCTS_FILE = "src/main/java/flooringmastery/Data/Products.txt";
+    public static final String PRODUCTS_FILE = "SampleFileData/Data/Products.txt";
     public static final String DELIMITER = ",";
 
     private Map<String, Product> products = new HashMap<>();

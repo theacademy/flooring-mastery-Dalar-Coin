@@ -1,2 +1,0 @@
-0002::Charles::Babbage::.NET-May-1845
-0001::Ada::Lovelace::Java-May-1845

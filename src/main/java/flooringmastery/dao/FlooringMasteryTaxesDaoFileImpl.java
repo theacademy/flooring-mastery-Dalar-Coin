@@ -10,7 +10,7 @@ import java.util.*;
 
 public class FlooringMasteryTaxesDaoFileImpl implements FlooringMasteryTaxesDao {
 
-    public static final String TAXES_FILE = "src/main/java/flooringmastery/Data/Taxes.txt";
+    public static final String TAXES_FILE = "SampleFileData/Data/Taxes.txt";
     public static final String DELIMITER = ",";
 
     private Map<String, Tax> taxes = new HashMap<>();
