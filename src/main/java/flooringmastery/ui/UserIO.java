@@ -1,5 +1,10 @@
 package flooringmastery.ui;
 
+import flooringmastery.service.FlooringMasteryDataValidationException;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 public interface UserIO {
 
     void print(String message);
@@ -11,6 +16,10 @@ public interface UserIO {
     float readFloat(String prompt);
 
     float readFloat(String prompt, float min, float max);
+
+    LocalDate readLocalDate(String prompt) throws FlooringMasteryDataValidationException;
+
+    BigDecimal readBigDecimal(String prompt) throws FlooringMasteryDataValidationException;
 
     int readInt(String prompt);
 

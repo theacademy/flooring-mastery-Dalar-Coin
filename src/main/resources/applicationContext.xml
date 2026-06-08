@@ -18,25 +18,24 @@
     <!-- Bean definitions go here -->
     <bean id="userIO" class="flooringmastery.ui.UserIOConsoleImpl"/>
 
-    <bean id="view" class="flooringmastery.ui.ClassRosterView">
+    <bean id="view" class="flooringmastery.ui.FlooringMasteryView">
         <constructor-arg ref="userIO"/>
     </bean>
 
-    <bean id="classRosterDao"
-          class="flooringmastery.dao.ClassRosterDaoFileImpl"/>
+    <bean id="orderDao" class="flooringmastery.dao.FlooringMasteryOrderDaoFileImpl">
+        <constructor-arg value="Orders/"/>
+    </bean>
+    <bean id="taxesDao" class="flooringmastery.dao.FlooringMasteryTaxesDaoFileImpl"/>
+    <bean id="productDao" class="flooringmastery.dao.FlooringMasteryProductDaoFileImpl"/>
 
-    <bean id="auditDao"
-          class="flooringmastery.dao.ClassRosterAuditDaoFileImpl"/>
-
-    <bean id="serviceLayer"
-          class="flooringmastery.service.ClassRosterServiceLayerImpl">
-        <constructor-arg ref="classRosterDao"/>
-        <constructor-arg ref="auditDao"/>
+    <bean id="service" class="flooringmastery.service.FlooringMasteryServiceLayerImpl">
+        <constructor-arg ref="orderDao"/>
+        <constructor-arg ref="taxesDao"/>
+        <constructor-arg ref="productDao"/>
     </bean>
 
-    <bean id="controller"m
-          class="flooringmastery.controller.ClassRosterController">
-        <constructor-arg ref="serviceLayer"/>
+    <bean id="controller" class="flooringmastery.controller.FlooringMasteryController">
+        <constructor-arg ref="service"/>
         <constructor-arg ref="view"/>
     </bean>
 

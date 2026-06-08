@@ -1,6 +1,6 @@
 package flooringmastery;
 
-import flooringmastery.controller.ClassRosterController;
+import flooringmastery.controller.FlooringMasteryController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,8 +20,8 @@ public class App {
 
         ApplicationContext ctx =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        ClassRosterController controller =
-                ctx.getBean("controller", ClassRosterController.class);
+        FlooringMasteryController controller =
+                ctx.getBean("controller", FlooringMasteryController.class);
         controller.run();
     }
 }

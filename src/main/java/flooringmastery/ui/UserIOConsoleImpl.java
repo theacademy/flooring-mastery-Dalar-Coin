@@ -1,5 +1,11 @@
 package flooringmastery.ui;
 
+import flooringmastery.service.FlooringMasteryDataValidationException;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class UserIOConsoleImpl implements UserIO {
@@ -19,147 +25,140 @@ public class UserIOConsoleImpl implements UserIO {
 
     @Override
     public int readInt(String prompt) {
-        int usrInt;
         while (true) {
             print(prompt);
             try {
-                String usrPrompt = sc.nextLine();
-                usrInt = Integer.parseInt(usrPrompt);
-                break;
+                return Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrInt;
     }
 
     @Override
     public int readInt(String prompt, int min, int max) {
-        int usrInt;
         while (true) {
             print(prompt);
-            try{
-                String usrPrompt = sc.nextLine();
-                usrInt = Integer.parseInt(usrPrompt);
+            try {
+                int usrInt = Integer.parseInt(sc.nextLine());
                 if (usrInt < min || usrInt > max) {
                     print("You must enter a number between " + min + " and " + max + ".  Please try again");
                 } else {
-                    break;
+                    return usrInt;
                 }
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrInt;
     }
 
     @Override
     public long readLong(String prompt) {
-        long usrLong;
         while (true) {
             print(prompt);
             try {
-                String usrPrompt = sc.nextLine();
-                usrLong = Long.parseLong(usrPrompt);
-                break;
+                return Long.parseLong(sc.nextLine());
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrLong;
     }
 
     @Override
     public long readLong(String prompt, long min, long max) {
-        long usrLong;
         while (true) {
             print(prompt);
-            try{
-                String usrPrompt = sc.nextLine();
-                usrLong = Long.parseLong(usrPrompt);
+            try {
+                long usrLong = Long.parseLong(sc.nextLine());
                 if (usrLong < min || usrLong > max) {
                     print("You must enter a number between " + min + " and " + max + ".  Please try again");
                 } else {
-                    break;
+                    return usrLong;
                 }
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrLong;
     }
-
-
 
     @Override
     public float readFloat(String prompt) {
-        float usrFloat;
         while (true) {
             print(prompt);
             try {
-                String usrPrompt = sc.nextLine();
-                usrFloat = Float.parseFloat(usrPrompt);
-                break;
+                return Float.parseFloat(sc.nextLine());
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrFloat;
     }
 
     @Override
     public float readFloat(String prompt, float min, float max) {
-        float usrFloat;
         while (true) {
             print(prompt);
-            try{
-                String usrPrompt = sc.nextLine();
-                usrFloat = Float.parseFloat(usrPrompt);
+            try {
+                float usrFloat = Float.parseFloat(sc.nextLine());
                 if (usrFloat < min || usrFloat > max) {
                     print("You must enter a number between " + min + " and " + max + ".  Please try again");
                 } else {
-                    break;
+                    return usrFloat;
                 }
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrFloat;
     }
 
     @Override
     public double readDouble(String prompt) {
-        double usrDouble;
         while (true) {
             print(prompt);
             try {
-                String usrPrompt = sc.nextLine();
-                usrDouble = Double.parseDouble(usrPrompt);
-                break;
+                return Double.parseDouble(sc.nextLine());
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrDouble;
     }
 
     @Override
     public double readDouble(String prompt, double min, double max) {
-        double usrDouble;
         while (true) {
             print(prompt);
-            try{
-                String usrPrompt = sc.nextLine();
-                usrDouble = Double.parseDouble(usrPrompt);
+            try {
+                double usrDouble = Double.parseDouble(sc.nextLine());
                 if (usrDouble < min || usrDouble > max) {
                     print("You must enter a number between " + min + " and " + max + ".  Please try again");
                 } else {
-                    break;
+                    return usrDouble;
                 }
             } catch (NumberFormatException e) {
                 print("Invalid input.  Please try again.");
             }
         }
-        return usrDouble;
+    }
+
+    @Override
+    public LocalDate readLocalDate(String prompt) throws FlooringMasteryDataValidationException {
+        print(prompt);
+        try {
+            return LocalDate.parse(sc.nextLine(),
+                    DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        } catch (DateTimeParseException e) {
+            throw new FlooringMasteryDataValidationException(
+                    "Date format was incorrect.  Please input in the form MM/dd/yyyy");
+        }
+    }
+
+    @Override
+    public BigDecimal readBigDecimal(String prompt) throws FlooringMasteryDataValidationException {
+        print(prompt);
+        try {
+            return new BigDecimal(sc.nextLine().trim());
+        } catch (NumberFormatException e) {
+            throw new FlooringMasteryDataValidationException(
+                    "Invalid input. Please enter a number.");
+        }
     }
 }
