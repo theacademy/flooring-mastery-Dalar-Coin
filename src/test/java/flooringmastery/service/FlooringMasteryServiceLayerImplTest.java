@@ -3,6 +3,8 @@ package flooringmastery.service;
 import flooringmastery.dao.*;
 import flooringmastery.model.Order;
 import org.junit.jupiter.api.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,11 +16,11 @@ class FlooringMasteryServiceLayerImplTest {
     private FlooringMasteryServiceLayer service;
 
     public FlooringMasteryServiceLayerImplTest() {
-        // Hand-wire the service with in-memory stub DAOs (no Spring, no files).
-        FlooringMasteryOrderDao orderDao = new FlooringMasteryOrderDaoStubImpl();
-        FlooringMasteryTaxesDao taxesDao = new FlooringMasteryTaxesDaoStubImpl();
-        FlooringMasteryProductDao productDao = new FlooringMasteryProductDaoStubImpl();
-        service = new FlooringMasteryServiceLayerImpl(orderDao, taxesDao, productDao);
+        // Wire the service through Spring using the test context, which
+        // binds the DAO interfaces to in-memory stub implementations.
+        ApplicationContext ctx =
+                new ClassPathXmlApplicationContext("applicationContext-test.xml");
+        service = ctx.getBean("serviceLayer", FlooringMasteryServiceLayer.class);
     }
 
     private LocalDate futureDate() {
